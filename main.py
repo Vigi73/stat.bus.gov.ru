@@ -24,10 +24,10 @@ if __name__ == '__main__':
                 f'http://bus.gov.ru/public/annual-balance-f0503737/show-last-annual-balance.json?agencyId={value1}',
                 f'http://bus.gov.ru/public/agency/last_activity_estate_usage_report.json?agency={value1}',
                 f'http://bus.gov.ru/public/agency/last-measure-details.json?agency={value1}'
-                       ]
-
+                ]
 
         result = pars(urls, inn)
+
         buh = sum([result[3], result[4], result[5]])
 
         pr = sum(result) * 100 / 8

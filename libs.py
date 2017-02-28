@@ -19,10 +19,7 @@ def get_size(size, inn):
             '2254002862': size-4,
             '2254003506': size-4,
             '2254003810': size-4,
-            '2254003295': size-2,
-
-            '2254002693': size-4
-
+            '2254003295': size-2
             }
     return or_p[inn]
 
@@ -37,6 +34,7 @@ def pars(urls, inn):
     for inc, u in enumerate(urls):
         r = requests.get(u, allow_redirects=False)
         data = r.json()
+
 
         try:
             list_answer.append(1 if get_output(data['currentTask']['publishDate']) == Y else 0)
