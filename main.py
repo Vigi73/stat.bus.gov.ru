@@ -27,9 +27,10 @@ if __name__ == '__main__':
                 ]
 
         result = pars(urls, inn)
+        buh = sum([result[3], result[4], result[5]])
 
         pr = sum(result) * 100 / 8
-        get_print(i, name_org, result, pr)
+        get_print(i, name_org, result, pr, "+" if buh == 3 else "")
         matrix.append(result)
 
 

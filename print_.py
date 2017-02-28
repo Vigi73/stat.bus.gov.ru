@@ -1,12 +1,12 @@
 from datetime import datetime
 
 
-def get_print(i, org, lst, pr):
+def get_print(i, org, lst, pr, buh):
 
     with open('otchet.txt', 'a', encoding='utf-8') as f:
         print('-' * 127, file=f)
         print(f'|{i:^{5}}|{org:<{65}}|{lst[0]:^{5}}|{lst[1]:^{5}}|{lst[2]:^{5}}|{lst[3]:^{5}}|{lst[4]:^{5}}|'
-              f'{lst[5]:^{5}}|{lst[6]:^{5}}|{lst[7]:^{5}}|{pr:^{5}}|', file=f)
+              f'{lst[5]:^{5}}|{lst[6]:^{5}}|{lst[7]:^{5}}|{pr:^{5}}|  {buh}', file=f)
 
 
 
