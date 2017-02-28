@@ -1,8 +1,10 @@
 import requests
 from datetime import datetime
+from fake_useragent import UserAgent
 
+ua = UserAgent()
 Y = '2017'
-
+headers = {'user-agent': f'{ua.ie}'}
 
 def get_size(size, inn):
     or_p = {'2254002252': size-4,
@@ -32,7 +34,8 @@ def pars(urls, inn):
     list_answer = []
 
     for inc, u in enumerate(urls):
-        r = requests.get(u, allow_redirects=False)
+
+        r = requests.get(u, headers)#, allow_redirects=False)
         data = r.json()
 
 
