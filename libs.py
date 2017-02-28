@@ -6,6 +6,9 @@ ua = UserAgent()
 Y = '2017'
 headers = {'user-agent': f'{ua.ie}'}
 
+
+
+
 def get_size(size, inn):
     or_p = {'2254002252': size-4,
             '2254003175': size-4,
@@ -35,7 +38,7 @@ def pars(urls, inn):
 
     for inc, u in enumerate(urls):
 
-        r = requests.get(u, headers)#, allow_redirects=False)
+        r = requests.get(u,  headers=headers)  # , allow_redirects=False)
         data = r.json()
 
 
