@@ -16,7 +16,7 @@ if __name__ == '__main__':
     for i, inn in enumerate(inns_mb, start=1):
         value1, value2, name_org = get_value(inn.split(',')[0])
 
-        if inn.split(','[1]) == 'm':
+        if inn.split('')[1] == 'm':
             urls = [f'http://bus.gov.ru/public/agency/agency_tasks.json?agency={value1}&task={value2}',
                     f'http://bus.gov.ru/public/agency/last-agency-plan.json?agency={value1}&d-5460-o=2&d-5460-s=1',
                     f'http://bus.gov.ru/public/agency/last-operation.json?agency={value1}&stage=',
