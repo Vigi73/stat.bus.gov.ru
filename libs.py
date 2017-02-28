@@ -32,7 +32,7 @@ def pars(urls, inn):
     list_answer = []
 
     for inc, u in enumerate(urls):
-        r = requests.get(u)
+        r = requests.get(u, allow_redirects=False)
         data = r.json()
 
         try:
