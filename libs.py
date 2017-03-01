@@ -8,9 +8,6 @@ Y = '2017'
 headers = {'User-Agent': f'{ua.ie}'}
 
 
-
-
-
 def get_size(size, inn):
     or_p = {'2254002252': size-4,
             '2254003175': size-4,
@@ -43,6 +40,7 @@ def pars(urls, inn):
     for inc, u in enumerate(urls):
 
         r = requests.get(u,  headers=headers, allow_redirects=False)#, proxies={'http': '138.68.141.222:8080'})
+        print(r.status_code)
         data = r.json()
 
 

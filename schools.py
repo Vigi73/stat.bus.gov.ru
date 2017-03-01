@@ -2,16 +2,17 @@ from datetime import datetime
 from libs import pars2
 from inn_org import inns_school
 from organization import get_value
-from print_ import get_print, print_main, print_end
+from print_ import get_print_school, print_main_school, print_end_school
 
 matrix = []
 s_ = []
 
 
 def get_schools():
-    #print_main()
 
-    st_time = datetime.now()
+    print_main_school()
+
+
 
     for i, inn in enumerate(inns_school, start=1):
         value1, value2, name_org = get_value(inn)
@@ -26,25 +27,23 @@ def get_schools():
                 ]
 
         result = pars2(urls, inn)
-        print(result)
-    #
-    #     buh = sum([result[3], result[4], result[5]])
-    #     if buh == 3:
-    #         s_.append(1)
-    #
-    #     pr = sum(result) * 100 / 8
-    #     get_print(i, name_org, result, pr, "+" if buh == 3 else "")
-    #     matrix.append(result)
-    #
-    # end_time = datetime.now()
-    #
-    # p1 = sum([matrix[j][0] for j in range(len(matrix))])
-    # p2 = sum([matrix[j][1] for j in range(len(matrix))])
-    # p3 = sum([matrix[j][2] for j in range(len(matrix))])
-    #
-    # p5 = sum(s_)
-    #
-    # p7 = sum([matrix[j][6] for j in range(len(matrix))])
-    # p8 = sum([matrix[j][7] for j in range(len(matrix))])
-    #
-    # print_end(p1, p2, p3, p5, p7, p8, str(end_time - st_time).split('.')[0])
+
+
+        buh = sum([result[2], result[3], result[4]])
+        if buh == 3:
+            s_.append(1)
+
+        pr = sum(result) * 100 / 7
+
+        get_print_school(i, name_org, result, pr, "+" if pr == 100.0 else "")
+        matrix.append(result)
+
+
+
+    p1 = sum([matrix[j][0] for j in range(len(matrix))])
+    p2 = sum([matrix[j][1] for j in range(len(matrix))])
+    p3 = sum(s_)
+    p6 = sum([matrix[j][5] for j in range(len(matrix))])
+    p7 = sum([matrix[j][6] for j in range(len(matrix))])
+
+    print_end_school(p1, p2, p3, p6, p7)
