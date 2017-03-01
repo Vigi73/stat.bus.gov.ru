@@ -1,4 +1,4 @@
-from datetime import datetime
+
 from libs import pars
 from inn_org import inns_mb
 from organization import get_value
@@ -32,9 +32,8 @@ def get_mb():
             s_.append(1)
 
         pr = sum(result) * 100 / 8
-        get_print(i, name_org, result, pr, "+" if buh == 3 else "")
+        get_print(i, name_org, result, pr, "+" if pr == 100.0 else "")
         matrix.append(result)
-
 
     p1 = sum([matrix[j][0] for j in range(len(matrix))])
     p2 = sum([matrix[j][1] for j in range(len(matrix))])
