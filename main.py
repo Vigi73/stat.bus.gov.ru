@@ -3,5 +3,5 @@ from schools import get_schools
 
 
 if __name__ == '__main__':
-    get_mb()
+    #get_mb()
     get_schools()
