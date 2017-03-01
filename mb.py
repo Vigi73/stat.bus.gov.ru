@@ -6,13 +6,23 @@ from print_ import get_print, print_main, print_end
 import progressbar
 
 
+
 matrix = []
 s_ = []
 
 def get_mb():
     print_main()
 
-    bar = progressbar.ProgressBar(maxval=150.0).start()
+
+    widgets = [progressbar.Percentage(),
+               ' ', progressbar.Bar(),
+               ' ', progressbar.ETA(),
+               ' ', progressbar.AnimatedMarker(markers='◐◓◑◒')
+
+               ]
+
+
+    bar = progressbar.ProgressBar(widgets=widgets, maxval=150.0).start()
     t = 0.0
 
     for i, inn in enumerate(inns_mb, start=1):

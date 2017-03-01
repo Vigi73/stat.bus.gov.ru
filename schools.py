@@ -10,9 +10,15 @@ s_ = []
 
 
 def get_schools():
+    widgets = [progressbar.Percentage(),
+               ' ', progressbar.Bar(),
+               ' ', progressbar.ETA(),
+               ' ', progressbar.AnimatedMarker(markers='◐◓◑◒')
+
+               ]
 
     print_main_school()
-    bar = progressbar.ProgressBar(maxval=80.0).start()
+    bar = progressbar.ProgressBar(widgets=widgets, maxval=80.0).start()
     t = 0.0
 
 
