@@ -1,7 +1,11 @@
 import requests
 from datetime import datetime
 from fake_useragent import UserAgent
-from time import sleep
+
+
+
+
+
 
 ua = UserAgent()
 Y = '2017'
@@ -43,12 +47,13 @@ def get_output(data):
 def pars(urls, inn):
     list_answer = []
 
+
     for inc, u in enumerate(urls):
 
         r = requests.get(u,  headers=headers, allow_redirects=False)#, proxies={'http': '138.68.141.222:8080'})
-        print(r.status_code)
-        data = r.json()
+        #print(r.status_code)
 
+        data = r.json()
 
         try:
             list_answer.append(1 if get_output(data['currentTask']['publishDate']) == Y else 0)
@@ -70,16 +75,19 @@ def pars(urls, inn):
                         except KeyError:
                             list_answer.append(1 if get_output(data['currentMeasureInfo']['publishDate']).
                                                split('-')[0] == Y else 0)
+
     return list_answer
 #============================================================================================
 
 def pars2(urls, inn):
     list_answer = []
 
+
     for inc, u in enumerate(urls):
 
         r = requests.get(u,  headers=headers)#, allow_redirects=False)#, proxies={'http': '138.68.141.222:8080'})
-        print(r.status_code)
+        #print(r.status_code)
+
         data = r.json()
 
 

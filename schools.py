@@ -3,6 +3,7 @@ from libs import pars2
 from inn_org import inns_school
 from organization import get_value
 from print_ import get_print_school, print_main_school, print_end_school
+import progressbar
 
 matrix = []
 s_ = []
@@ -11,7 +12,8 @@ s_ = []
 def get_schools():
 
     print_main_school()
-
+    bar = progressbar.ProgressBar(maxval=80.0).start()
+    t = 0.0
 
 
     for i, inn in enumerate(inns_school, start=1):
@@ -27,6 +29,8 @@ def get_schools():
                 ]
 
         result = pars2(urls, inn)
+        bar.update(t)
+        t += 10.0
 
 
         buh = sum([result[2], result[3], result[4]])
@@ -38,8 +42,7 @@ def get_schools():
         get_print_school(i, name_org, result, pr, "+" if pr == 100.0 else "")
         matrix.append(result)
 
-
-
+    bar.finish()
     p1 = sum([matrix[j][0] for j in range(len(matrix))])
     p2 = sum([matrix[j][1] for j in range(len(matrix))])
     p3 = sum(s_)
