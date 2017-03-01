@@ -24,4 +24,7 @@ def print_end(p1, p2, p3, p5,  p7, p8, time_using):
         print(f'|{" ":^{5}}|{"Итог":^{65}}|{p1:^{5}}|{p2:^{5}}|{p3:^{5}}|{" ":^{5}}|'
               f'{p5:^{5}}|{" ":^{5}}|{p7:^{5}}|{p8:^{5}}|{" ":^{5}}|', file=f)
         print('-' * 127, file=f)
+        print(file=f)
+
         print(f'\nTime Using: {time_using}')
+
