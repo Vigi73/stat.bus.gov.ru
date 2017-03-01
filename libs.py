@@ -4,7 +4,11 @@ from fake_useragent import UserAgent
 
 ua = UserAgent()
 Y = '2017'
-headers = {'user-agent': f'{ua.ie}'}
+headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0',
+           'Host': 'bus.gov.ru',
+           'Accept': 'application/json, text/plain, */*',
+           'Cookie': 'srv=29120; srv=29120; JSESSIONID=0000Cxo3aeWqAsuuUscGt0gCkgL:1846164jo; stick=!P5StB4HH86il6xkW1/kkDaZKycN1KVcbuZVArEfdX1L+/MiJOmx6/f57UngZtB/qKNFUToQttfZ3XWw=; srv=29120; gmuportal=3; _ym_uid=1488334556832746636; _ym_isad=2; _ym_visorc_14477227=w; gmuind=0; JSESSIONID=0000xFkAXe4ArTMp9-jr5wLMQHb:19t8nac8v; homeRegionId=5277388; homeRegionName=%D0%90%D0%BB%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9; homeRegionFullName=%D0%90%D0%BB%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BA%D1%80%D0%B0%D0%B9; areaId=0; ppoId=1'}
+
 
 
 
@@ -38,7 +42,7 @@ def pars(urls, inn):
 
     for inc, u in enumerate(urls):
 
-        r = requests.get(u,  headers=headers)  # , allow_redirects=False)
+        r = requests.get(u,  headers=headers)
         data = r.json()
 
 
