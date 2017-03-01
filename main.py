@@ -5,7 +5,7 @@ from organization import get_value
 from print_ import get_print, print_main, print_end
 
 matrix = []
-
+s_ = []
 
 if __name__ == '__main__':
 
@@ -29,6 +29,8 @@ if __name__ == '__main__':
         result = pars(urls, inn)
 
         buh = sum([result[3], result[4], result[5]])
+        if buh == 3:
+            s_.append(1)
 
         pr = sum(result) * 100 / 8
         get_print(i, name_org, result, pr, "+" if buh == 3 else "")
@@ -40,7 +42,7 @@ if __name__ == '__main__':
     p2 = sum([matrix[j][1] for j in range(len(matrix))])
     p3 = sum([matrix[j][2] for j in range(len(matrix))])
 
-    p5 = buh
+    p5 = sum(s_)
 
     p7 = sum([matrix[j][6] for j in range(len(matrix))])
     p8 = sum([matrix[j][7] for j in range(len(matrix))])
