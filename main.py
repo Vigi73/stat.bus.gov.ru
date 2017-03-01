@@ -39,12 +39,12 @@ if __name__ == '__main__':
     p1 = sum([matrix[j][0] for j in range(len(matrix))])
     p2 = sum([matrix[j][1] for j in range(len(matrix))])
     p3 = sum([matrix[j][2] for j in range(len(matrix))])
-    p4 = sum([matrix[j][3] for j in range(len(matrix))])
-    p5 = sum([matrix[j][4] for j in range(len(matrix))])
-    p6 = sum([matrix[j][5] for j in range(len(matrix))])
+
+    p5 = buh
+
     p7 = sum([matrix[j][6] for j in range(len(matrix))])
     p8 = sum([matrix[j][7] for j in range(len(matrix))])
 
-    print_end(p1, p2, p3, p4, p5, p6, p7, p8, str(end_time - st_time).split('.')[0])
+    print_end(p1, p2, p3, p5, p7, p8, str(end_time - st_time).split('.')[0])
 
 
