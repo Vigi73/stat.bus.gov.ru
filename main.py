@@ -3,6 +3,7 @@ from schools import get_schools
 from kray import get_kray
 from avto import get_avto
 from czn import get_czn
+from print_ import get_intro
 from datetime import datetime
 
 
@@ -22,5 +23,7 @@ if __name__ == '__main__':
 
     e = datetime.now()
 
-    print(f'\nTime Using: {str(e-s)}')
+    print(f'\nTime Using: {str(e-s)}\n')
+
+    get_intro()
 
