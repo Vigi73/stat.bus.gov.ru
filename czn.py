@@ -1,5 +1,5 @@
 from libs import pars2
-from inn_org import inns_school
+from inn_org import inns_czn
 from organization import get_value
 from print_ import get_print_school, print_main_school, print_end_school
 import progressbar
@@ -8,7 +8,7 @@ matrix = []
 s_ = []
 
 
-def get_schools():
+def get_czn():
     widgets = [progressbar.Percentage(),
                ' ', progressbar.Bar(),
                ' ', progressbar.ETA(),
@@ -17,11 +17,11 @@ def get_schools():
                ]
 
     print_main_school()
-    bar = progressbar.ProgressBar(widgets=widgets, maxval=80.0).start()
+    bar = progressbar.ProgressBar(widgets=widgets, maxval=10.0).start()
     t = 0.0
 
 
-    for i, inn in enumerate(inns_school, start=1):
+    for i, inn in enumerate(inns_czn, start=1):
         value1, value2, name_org = get_value(inn)
 
         urls = [f'http://bus.gov.ru/public/agency/agency_tasks.json?agency={value1}&d-5460-o=2&d-5460-s=1&task={value2}',
@@ -35,7 +35,7 @@ def get_schools():
 
         result = pars2(urls, inn)
         bar.update(t)
-        t += 10.0
+        t += 5.0
 
 
         buh = sum([result[2], result[3], result[4]])

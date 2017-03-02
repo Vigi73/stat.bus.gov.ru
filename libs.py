@@ -37,7 +37,9 @@ def get_size(size, inn):
             '2254002573': size-4,
             '2254002686': size-4,
             '2254000907': size-4,
-            '2254000833': size-4
+            '2254000833': size-4,
+            '2254002982': size-5,
+            '2254002742': size-4
             }
     return or_p[inn]
 
@@ -115,7 +117,7 @@ def pars2(urls, inn):
                                     list_answer.append(1 if get_output(data['currentMeasureInfo']['publishDate']) ==
                                                             Y else 0)
                                 except:
-                                    list_answer.append('-')
+                                    list_answer.append(-1)
 
 
 

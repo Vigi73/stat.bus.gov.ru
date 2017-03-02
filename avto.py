@@ -1,5 +1,5 @@
 from libs import pars
-from inn_org import inns_kray
+from inn_org import inns_avto
 from organization import get_value
 from print_ import get_print, print_main, print_end
 import progressbar
@@ -9,7 +9,7 @@ import progressbar
 matrix = []
 s_ = []
 
-def get_kray():
+def get_avto():
     print_main()
 
 
@@ -21,10 +21,10 @@ def get_kray():
                ]
 
 
-    bar = progressbar.ProgressBar(widgets=widgets, maxval=20.0).start()
+    bar = progressbar.ProgressBar(widgets=widgets, maxval=10.0).start()
     t = 0.0
 
-    for i, inn in enumerate(inns_kray, start=1):
+    for i, inn in enumerate(inns_avto, start=1):
 
 
         value1, value2, name_org = get_value(inn)
@@ -41,7 +41,7 @@ def get_kray():
 
         result = pars(urls, inn)
         bar.update(t)
-        t += 10.0
+        t += 5.0
 
         buh = sum([result[3], result[4], result[5]])
         if buh == 3:
