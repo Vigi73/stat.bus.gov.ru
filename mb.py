@@ -7,6 +7,8 @@ import progressbar
 
 
 
+
+
 matrix = []
 s_ = []
 
@@ -40,7 +42,12 @@ def get_mb():
                 f'http://bus.gov.ru/public/agency/last-measure-details.json?agency={value1}&d-5460-o=2&d-5460-s=1'
                 ]
 
+
+
         result = pars(urls, inn)
+
+
+
         bar.update(t)
         t += 10.0
 

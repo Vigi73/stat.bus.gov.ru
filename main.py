@@ -8,18 +8,20 @@ from datetime import datetime
 
 
 
+
+
 if __name__ == '__main__':
 
     s = datetime.now()
     with open('otchet.txt', 'w') as f:
         print(file=f)
 
-
     get_mb()
     get_kray()
     get_avto()
     get_schools()
     get_czn()
+
 
     e = datetime.now()
 

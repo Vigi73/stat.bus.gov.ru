@@ -9,6 +9,7 @@ import progressbar
 matrix = []
 s_ = []
 
+
 def get_kray():
     print_main()
 
