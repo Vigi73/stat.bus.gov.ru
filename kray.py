@@ -30,7 +30,7 @@ def get_kray():
 
         value1, value2, name_org = get_value(inn)
 
-        urls = [f'http://bus.gov.ru/public/agency/agency_tasks.json?agency={value1}&d-5460-o=2&d-5460-s=1&task={value2}',
+        urls = [f'http://bus.gov.ru/public/agency/last_task.json?agency={value1}&d-5460-o=2&d-5460-s=1&task=',
                 f'http://bus.gov.ru/public/agency/last-agency-plan.json?agency={value1}&d-5460-o=2&d-5460-s=1',
                 f'http://bus.gov.ru/public/agency/last-operation.json?agency={value1}&stage=',
                 f'http://bus.gov.ru/public/agency/last-annual-balance-F0503721-info.json?agencyId={value1}&d-5460-o=2&d-5460-s=1',

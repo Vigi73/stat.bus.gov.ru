@@ -24,7 +24,7 @@ def get_schools():
     for i, inn in enumerate(inns_school, start=1):
         value1, value2, name_org = get_value(inn)
 
-        urls = [f'http://bus.gov.ru/public/agency/agency_tasks.json?agency={value1}&d-5460-o=2&d-5460-s=1&task={value2}',
+        urls = [f'http://bus.gov.ru/public/agency/agency_tasks.json?agency={value1}&d-5460-o=2&d-5460-s=1&task=',
                 f'http://bus.gov.ru/public/agency/last-budget.json?agency={value1}&d-5460-o=2&d-5460-s=1',
                 f'http://bus.gov.ru/public/agency/last-annual-balance-F0503121-info.json?agencyId={value1}&d-5460-o=2&d-5460-s=1',
                 f'http://bus.gov.ru/public/annual-balance-f0503127/show-last-annual-balance.json?agencyId={value1}&d-5460-o=2&d-5460-s=1',
