@@ -16,10 +16,10 @@ if __name__ == '__main__':
     with open('otchet.txt', 'w') as f:
         print(file=f)
 
-    #get_mb()
-    #get_kray()
-    #get_avto()
-    #get_schools()
+    get_mb()
+    get_kray()
+    get_avto()
+    get_schools()
     get_czn()
 
 
