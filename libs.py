@@ -38,7 +38,7 @@ def get_size_0(size, inn):
             '2254000907': size-5,
             '2254000833': size-5,
             '2254002982': size-5,
-            '2254002742': size-5
+            '2254002742': size
             }
     return or_p[inn]
 
